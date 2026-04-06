@@ -90,15 +90,24 @@ Full strip and re-sheet, installation, alteration, repair and refurbishment acro
 
 <h2 id="quote">Request a quote</h2>
 
-<form name="quote" method="POST" data-netlify="true">
-<input type="hidden" name="form-name" value="quote">
+<form name="quote-request" method="POST" data-netlify="true">
 
-<input name="name" placeholder="Your name" style="width:100%;padding:10px;margin:5px 0;"><br>
-<input name="email" placeholder="Email" style="width:100%;padding:10px;margin:5px 0;"><br>
-<input name="location" placeholder="Location" style="width:100%;padding:10px;margin:5px 0;"><br>
-<textarea name="message" placeholder="Job description and measurements" style="width:100%;padding:10px;margin:5px 0;"></textarea><br>
+  <input type="hidden" name="form-name" value="quote-request">
 
-<button class="button primary">Send Quote Request</button>
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="email" name="email" placeholder="Email Address" required>
+
+  <input type="tel" name="phone" placeholder="Phone Number">
+
+  <input type="text" name="postcode" placeholder="Postcode" required>
+
+  <input type="text" name="town" placeholder="Town / City">
+
+  <textarea name="details" placeholder="Describe the work required"></textarea>
+
+  <button type="submit">Request Quote</button>
+
 </form>
 
 <br>
