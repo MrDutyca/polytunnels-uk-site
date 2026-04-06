@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Polytunnels-UK</title>
+
 <style>
 body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
 .container { max-width:1100px; margin:auto; padding:20px; }
@@ -14,8 +14,10 @@ body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
 .button { display:inline-block; padding:12px 20px; border-radius:10px; text-decoration:none; }
 .primary { background:white; color:black; }
 .header { display:flex; justify-content:space-between; align-items:center; }
+.contact-icons a { margin-left:10px; font-size:20px; text-decoration:none; }
 @media(max-width:700px){ .grid-2 { grid-template-columns:1fr; } }
 </style>
+
 </head>
 
 <body>
@@ -27,10 +29,18 @@ body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
 <h2>Polytunnels-UK</h2>
 <p style="opacity:0.6;">Polytunnel repairs, refurbishment, resheeting and installation</p>
 </div>
+
+<div class="contact-icons">
 <a href="tel:07414784220">📞</a>
+<a href="mailto:info@polytunnels-uk.com">✉️</a>
+</div>
 </div>
 
 <h1>Polytunnel work done to a professional standard.</h1>
+
+<p style="opacity:0.6;">
+20+ years experience • UK-wide • Commercial specialists
+</p>
 
 <p style="opacity:0.7;">
 Commercial, horticultural and agricultural polytunnel work across the UK.<br>
@@ -80,13 +90,22 @@ Full strip and re-sheet, installation, alteration, repair and refurbishment acro
 
 <h2 id="quote">Request a quote</h2>
 
-<form action="mailto:info@polytunnels-uk.com" method="post" enctype="text/plain">
-<input placeholder="Your name" style="width:100%;padding:10px;margin:5px 0;"><br>
-<input placeholder="Email" style="width:100%;padding:10px;margin:5px 0;"><br>
-<input placeholder="Location" style="width:100%;padding:10px;margin:5px 0;"><br>
-<textarea placeholder="Job description and measurements" style="width:100%;padding:10px;margin:5px 0;"></textarea><br>
+<form name="quote" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="quote">
+
+<input name="name" placeholder="Your name" style="width:100%;padding:10px;margin:5px 0;"><br>
+<input name="email" placeholder="Email" style="width:100%;padding:10px;margin:5px 0;"><br>
+<input name="location" placeholder="Location" style="width:100%;padding:10px;margin:5px 0;"><br>
+<textarea name="message" placeholder="Job description and measurements" style="width:100%;padding:10px;margin:5px 0;"></textarea><br>
+
 <button class="button primary">Send Quote Request</button>
 </form>
+
+<br>
+
+<p style="opacity:0.6;">
+Fast response. Most quotes returned within 24 hours.
+</p>
 
 </div>
 
