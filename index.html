@@ -1,177 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polytunnels-UK</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polytunnels-UK</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0a0a0a;
-  color: white;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+    }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+    /* TOP HEADER */
 
-.phone {
-  font-size: 18px;
-}
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 30px;
+    }
 
-/* SLIDESHOW */
+    .left-menu,
+    .right-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-.slideshow {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
+    .left-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
 
-.slideshow img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
+    .left-menu a:hover {
+      opacity: 0.8;
+    }
 
-/* GRID */
+    .menu-btn {
+      font-size: 22px;
+      color: white;
+      text-decoration: none;
+      line-height: 1;
+    }
 
-.grid {
-  display: grid;
-  gap: 16px;
-}
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-.grid-2 {
-  grid-template-columns: 1fr 1fr;
-}
+    .phone-icon {
+      background: #ff2b2b;
+      color: white;
+    }
 
-.box {
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 18px;
-  border-radius: 12px;
-}
+    .email-icon {
+      background: #ffe600;
+      color: black;
+    }
 
-@media(max-width:700px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
+    .quote-btn-top {
+      display: inline-block;
+      background: #19c537;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+    }
 
-/* FORM */
+    /* HERO */
 
-#quote form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 700px;
-}
+    .hero {
+      text-align: center;
+      padding: 10px 0 30px;
+    }
 
-#quote input,
-#quote textarea {
-  width: 100%;
-  font-size: 20px;
-  padding: 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-}
+    .hero h1 {
+      margin: 0;
+      font-size: 54px;
+      line-height: 1.05;
+    }
 
-#quote textarea {
-  min-height: 140px;
-}
+    .hero p {
+      margin: 14px auto 0;
+      font-size: 15px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      max-width: 100%;
+    }
 
-#quote button {
-  font-size: 20px;
-  padding: 16px;
-  border-radius: 10px;
-  background: white;
-  color: black;
-  cursor: pointer;
-}
+    /* SLIDESHOW */
 
-.quote-note {
-  margin-top: 18px;
-  font-size: 20px;
-}
-</style>
+    .slideshow {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
 
+    .slideshow img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* GRID */
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .box {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* FORM */
+
+    #quote form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 700px;
+    }
+
+    #quote input,
+    #quote textarea {
+      width: 100%;
+      font-size: 20px;
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: #111;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    #quote input::placeholder,
+    #quote textarea::placeholder {
+      color: rgba(255,255,255,0.65);
+    }
+
+    #quote textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    #quote button {
+      font-size: 20px;
+      padding: 16px;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+    }
+
+    .quote-note {
+      margin-top: 18px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+
+      .left-menu,
+      .right-actions {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <div class="header">
-    <h1>Polytunnels-UK</h1>
-    <div class="phone">📞 07414 784220</div>
-  </div>
+    <header class="topbar">
+      <div class="left-menu">
+        <a href="#" class="menu-btn">☰</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#quote">Contact</a>
+      </div>
 
-  <!-- SLIDESHOW -->
-  <div class="slideshow">
-    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" alt="Polytunnel">
-  </div>
+      <div class="right-actions">
+        <a href="tel:07414784220" class="icon-circle phone-icon" aria-label="Call Polytunnels-UK">☎</a>
+        <a href="mailto:info@polytunnels-uk.com" class="icon-circle email-icon" aria-label="Email Polytunnels-UK">✉</a>
+        <a href="#quote" class="quote-btn-top">Get a Quote</a>
+      </div>
+    </header>
 
-  <h2>Services</h2>
+    <section class="hero">
+      <h1>Polytunnels-UK</h1>
+      <p>Re-sheeting - Repairs - Refurbishments - Installations</p>
+    </section>
 
-  <div class="grid grid-2">
-
-    <div class="box">
-      <h3>Re-sheeting</h3>
-      <p>Full strip and re-sheet. Polythene and PVC. All systems and manufacturers.</p>
+    <div class="slideshow" id="gallery">
+      <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" alt="Polytunnels-UK project image">
     </div>
 
-    <div class="box">
-      <h3>Installation and alteration</h3>
-      <p>New installations, alterations and structural changes to existing tunnels.</p>
-    </div>
+    <section id="services">
+      <h2>Services</h2>
 
-    <div class="box">
-      <h3>Repair and refurbishment</h3>
-      <p>Repairs and refurbishment from the ground to gutters.</p>
-    </div>
+      <div class="grid grid-2">
+
+        <div class="box">
+          <h3>Re-sheeting</h3>
+          <p>Full strip and re-sheet. Polythene and PVC. All systems and manufacturers.</p>
+        </div>
+
+        <div class="box">
+          <h3>Installation and alteration</h3>
+          <p>New installations, alterations and structural changes to existing tunnels.</p>
+        </div>
+
+        <div class="box">
+          <h3>Repair and refurbishment</h3>
+          <p>Repairs and refurbishment from the ground to gutters.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="quote" class="box" style="margin-top: 30px;">
+      <h2>Request a quote</h2>
+
+      <form name="quote-request" method="POST" data-netlify="true" action="/thank-you.html">
+        <input type="hidden" name="form-name" value="quote-request">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="postcode" placeholder="Postcode" required>
+        <input type="text" name="town" placeholder="Town / City">
+        <textarea name="details" placeholder="Describe the work required" required></textarea>
+
+        <button type="submit">Request Quote</button>
+      </form>
+
+      <p class="quote-note">We will respond to your enquiry within 7 days.</p>
+    </section>
 
   </div>
-
-  <section id="quote" class="box">
-    <h2>Request a quote</h2>
-
-    <form name="quote-request" method="POST" data-netlify="true" action="/thank-you.html">
-      <input type="hidden" name="form-name" value="quote-request">
-
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="tel" name="phone" placeholder="Phone Number">
-      <input type="text" name="postcode" placeholder="Postcode" required>
-      <input type="text" name="town" placeholder="Town / City">
-      <textarea name="details" placeholder="Describe the work required" required></textarea>
-
-      <button type="submit">Request Quote</button>
-    </form>
-
-    <p class="quote-note">We will respond to your enquiry within 7 days.</p>
-  </section>
-
-</div>
-
-</body>
-</html>
-
-<p style="opacity:0.6;">
-Fast response. Most quotes returned within 24 hours.
-</p>
-
-</div>
 
 </body>
 </html>
