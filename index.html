@@ -6,16 +6,104 @@
 <title>Polytunnels-UK</title>
 
 <style>
-body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
-.container { max-width:1100px; margin:auto; padding:20px; }
-.grid { display:grid; gap:10px; }
-.grid-2 { grid-template-columns:1fr 1fr; }
-.box { border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; }
-.button { display:inline-block; padding:12px 20px; border-radius:10px; text-decoration:none; }
-.primary { background:white; color:black; }
-.header { display:flex; justify-content:space-between; align-items:center; }
-.contact-icons a { margin-left:10px; font-size:20px; text-decoration:none; }
-@media(max-width:700px){ .grid-2 { grid-template-columns:1fr; } }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.phone {
+  font-size: 18px;
+}
+
+/* SLIDESHOW */
+
+.slideshow {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.box {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+@media(max-width:700px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FORM */
+
+#quote form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 700px;
+}
+
+#quote input,
+#quote textarea {
+  width: 100%;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+#quote textarea {
+  min-height: 140px;
+}
+
+#quote button {
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.quote-note {
+  margin-top: 18px;
+  font-size: 20px;
+}
 </style>
 
 </head>
@@ -24,92 +112,60 @@ body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
 
 <div class="container">
 
-<div class="header">
-<div>
-<h2>Polytunnels-UK</h2>
-<p style="opacity:0.6;">Polytunnel repairs, refurbishment, resheeting and installation</p>
+  <div class="header">
+    <h1>Polytunnels-UK</h1>
+    <div class="phone">📞 07414 784220</div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="slideshow">
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" alt="Polytunnel">
+  </div>
+
+  <h2>Services</h2>
+
+  <div class="grid grid-2">
+
+    <div class="box">
+      <h3>Re-sheeting</h3>
+      <p>Full strip and re-sheet. Polythene and PVC. All systems and manufacturers.</p>
+    </div>
+
+    <div class="box">
+      <h3>Installation and alteration</h3>
+      <p>New installations, alterations and structural changes to existing tunnels.</p>
+    </div>
+
+    <div class="box">
+      <h3>Repair and refurbishment</h3>
+      <p>Repairs and refurbishment from the ground to gutters.</p>
+    </div>
+
+  </div>
+
+  <section id="quote" class="box">
+    <h2>Request a quote</h2>
+
+    <form name="quote-request" method="POST" data-netlify="true" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="quote-request">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="postcode" placeholder="Postcode" required>
+      <input type="text" name="town" placeholder="Town / City">
+      <textarea name="details" placeholder="Describe the work required" required></textarea>
+
+      <button type="submit">Request Quote</button>
+    </form>
+
+    <p class="quote-note">We will respond to your enquiry within 7 days.</p>
+  </section>
+
 </div>
 
-<div class="contact-icons">
-<a href="tel:07414784220">📞</a>
-<a href="mailto:info@polytunnels-uk.com">✉️</a>
-</div>
-</div>
-
-<h1>Polytunnel work done to a professional standard.</h1>
-
-<p style="opacity:0.6;">
-20+ years experience • UK-wide • Commercial specialists
-</p>
-
-<p style="opacity:0.7;">
-Commercial, horticultural and agricultural polytunnel work across the UK.<br>
-Full strip and re-sheet, installation, alteration, repair and refurbishment across all systems.
-</p>
-
-<a href="#quote" class="button primary">Request a Quote</a>
-
-<br><br>
-
-<div class="grid grid-2">
-<div class="box">Commercial and domestic</div>
-<div class="box">Horticultural and agricultural</div>
-<div class="box">Garden centres (live sites)</div>
-<div class="box">Resheeting</div>
-<div class="box">Installation and alteration</div>
-<div class="box">Repair and refurbishment</div>
-<div class="box">All systems</div>
-<div class="box">UK-wide coverage</div>
-</div>
-
-<br><br>
-
-<div class="grid grid-2">
-<div class="box">
-<h3>Commercial</h3>
-<p>Professional, reliable and efficient service that responds to your needs.</p>
-</div>
-
-<div class="box">
-<h3>Resheeting</h3>
-<p>Full strip and re-sheet. Polythene and PVC. All systems and manufacturers.</p>
-</div>
-
-<div class="box">
-<h3>Installation and alteration</h3>
-<p>New installations, alterations and structural changes to existing tunnels.</p>
-</div>
-
-<div class="box">
-<h3>Repair and refurbishment</h3>
-<p>Repairs and refurbishment from the ground to gutters.</p>
-</div>
-</div>
-
-<br><br>
-
-<h2 id="quote">Request a quote</h2>
-
-<form name="quote-request" method="POST" data-netlify="true">
-
-  <input type="hidden" name="form-name" value="quote-request">
-
-  <input type="text" name="name" placeholder="Your Name" required>
-
-  <input type="email" name="email" placeholder="Email Address" required>
-
-  <input type="tel" name="phone" placeholder="Phone Number">
-
-  <input type="text" name="postcode" placeholder="Postcode" required>
-
-  <input type="text" name="town" placeholder="Town / City">
-
-  <textarea name="details" placeholder="Describe the work required"></textarea>
-
-  <button type="submit">Request Quote</button>
-
-</form>
-<br>
+</body>
+</html>
 
 <p style="opacity:0.6;">
 Fast response. Most quotes returned within 24 hours.
