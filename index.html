@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Polytunnels-UK provides commercial polytunnel re-sheeting, repairs, refurbishment, new installations and canopies across England and Wales. Established 2001.">
-  <title>Commercial Polytunnel Repairs, Re-sheeting & Installation | Polytunnels-UK</title>
+  <title>Commercial Polytunnel Repairs, Re-sheeting &amp; Installation | Polytunnels-UK</title>
 
   <style>
     :root {
@@ -20,7 +20,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -71,7 +70,6 @@
 
     .left-menu a:hover,
     .footer-links a:hover { text-decoration: underline; }
-
     .brand-small { font-weight: 700; }
 
     .contact-link {
@@ -143,23 +141,6 @@
       font-size: 13px;
     }
 
-    .slideshow {
-      width: 100%;
-      min-height: 250px;
-      overflow: hidden;
-      border-radius: 20px;
-      margin-bottom: 30px;
-      border: 1px solid var(--border);
-      background: var(--panel);
-    }
-
-    .slideshow img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      display: block;
-    }
-
     .grid { display: grid; gap: 16px; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -174,8 +155,36 @@
     .box h3 { margin-top: 0; }
     .muted { color: var(--muted); }
 
-    section { margin: 34px 0; }
+    section { margin: 34px 0; scroll-margin-top: 120px; }
     h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 12px; }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .project-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .project-gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .project-gallery figcaption {
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .process-list { padding-left: 22px; }
     .process-list li { margin-bottom: 8px; }
@@ -229,7 +238,7 @@
     @media (max-width: 760px) {
       .container { padding: 16px; }
       .topbar { margin: -16px -16px 24px; align-items: flex-start; }
-      .hero, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero, .grid-2, .grid-3, .project-gallery { grid-template-columns: 1fr; }
       .right-actions { width: 100%; }
       .contact-link, .quote-btn-top { flex: 1 1 auto; justify-content: center; }
       .email-link { flex-basis: 100%; }
@@ -274,7 +283,7 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow">Established 2001 • England & Wales</p>
+          <p class="eyebrow">Established 2001 • England &amp; Wales</p>
           <h1 id="hero-title">Commercial polytunnel repairs, re-sheeting and installation</h1>
           <p class="standfirst">Polytunnels-UK specialises in commercial polytunnel re-sheeting, repairs, refurbishment, new installations and canopies for growers, nurseries, garden centres, farms, schools, colleges and similar organisations.</p>
           <div class="hero-actions">
@@ -294,9 +303,29 @@
         </aside>
       </section>
 
-      <div class="slideshow" id="gallery">
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" alt="Commercial polytunnel structure used to illustrate Polytunnels-UK repair and re-sheeting services">
-      </div>
+      <section id="gallery" aria-labelledby="gallery-title">
+        <p class="eyebrow">Recent project</p>
+        <h2 id="gallery-title">Bodmin nursery, Cornwall</h2>
+        <p class="muted">Commercial polytunnel re-sheeting and refurbishment work completed at a nursery site in Bodmin, Cornwall.</p>
+        <div class="project-gallery">
+          <figure>
+            <img src="images/bodmin-nursery-commercial-polytunnels.webp" width="480" height="360" loading="lazy" decoding="async" alt="Wide view of re-sheeted commercial polytunnels at a nursery in Bodmin, Cornwall">
+            <figcaption>Completed commercial polytunnels at the Bodmin nursery site.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bodmin-nursery-resheeted-polytunnel.webp" width="480" height="360" loading="lazy" decoding="async" alt="Front and side elevation of a re-sheeted commercial polytunnel at Bodmin Nursery">
+            <figcaption>Finished re-sheeting viewed from the front and side.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bodmin-nursery-polytunnel-side-elevation.webp" width="480" height="360" loading="lazy" decoding="async" alt="Long side elevation of a refurbished commercial polytunnel at Bodmin Nursery">
+            <figcaption>Long side elevation showing the completed covering.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bodmin-nursery-resheeting-work.webp" width="480" height="360" loading="lazy" decoding="async" alt="Polytunnel re-sheeting work in progress at a commercial nursery in Bodmin">
+            <figcaption>Re-sheeting work in progress at the commercial nursery.</figcaption>
+          </figure>
+        </div>
+      </section>
 
       <section id="services" aria-labelledby="services-title">
         <p class="eyebrow">Services</p>
