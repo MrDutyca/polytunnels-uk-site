@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Polytunnels-UK provides commercial polytunnel re-sheeting, repairs, refurbishment, new installations and canopies across England and Wales. Established 2001.">
+  <meta name="description" content="Commercial polytunnel re-sheeting, repairs, refurbishment, installations, canopies and alterations across England and Wales. Established 2001. Fully insured.">
   <title>Commercial Polytunnel Repairs, Re-sheeting &amp; Installation | Polytunnels-UK</title>
 
   <style>
@@ -24,32 +24,27 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
     }
 
     a { color: inherit; }
-
-    .container {
-      max-width: 1120px;
-      margin: auto;
-      padding: 20px;
-    }
+    .container { max-width: 1180px; margin: auto; padding: 20px; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
       gap: 20px;
+      align-items: center;
       padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
       margin: -20px -20px 30px;
-      background: rgba(10, 15, 13, 0.96);
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 15, 13, 0.97);
       backdrop-filter: blur(8px);
     }
 
@@ -57,9 +52,12 @@
     .right-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
+
+    .right-actions { justify-content: flex-end; }
+    .menu-label { font-weight: 800; color: var(--green); }
 
     .left-menu a,
     .footer-links a {
@@ -70,68 +68,79 @@
 
     .left-menu a:hover,
     .footer-links a:hover { text-decoration: underline; }
-    .brand-small { font-weight: 700; }
 
-    .contact-link {
+    .header-brand {
+      text-align: center;
+      min-width: 290px;
+    }
+
+    .header-brand a {
+      display: block;
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .header-brand span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .contact-link,
+    .quote-btn-top,
+    .button {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       min-height: 42px;
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       border: 1px solid var(--border);
-      background: var(--panel);
     }
 
     .phone-link { background: var(--red); border-color: var(--red); }
     .email-link { background: var(--yellow); border-color: var(--yellow); color: #111; }
-
-    .quote-btn-top,
-    .button {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 15px;
-      border: 0;
-    }
+    .quote-btn-top, .button { background: var(--green); border-color: var(--green); color: white; }
 
     .hero {
       display: grid;
       grid-template-columns: 1.4fr 0.8fr;
-      gap: 24px;
+      gap: 26px;
       align-items: center;
-      padding: 10px 0 30px;
+      padding: 12px 0 24px;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 74px);
+      font-size: clamp(40px, 6.6vw, 72px);
       line-height: 1.02;
     }
 
     .hero .standfirst {
       margin: 18px 0;
-      font-size: 21px;
+      max-width: 780px;
       color: var(--muted);
-      max-width: 760px;
+      font-size: 21px;
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
     .trust-card {
-      border: 1px solid var(--border);
       padding: 22px;
+      border: 1px solid var(--border);
       border-radius: 18px;
       background: linear-gradient(160deg, var(--panel), var(--panel-2));
     }
 
     .trust-card ul { margin: 0; padding-left: 20px; }
+    .trust-card li { margin-bottom: 8px; }
 
     .eyebrow {
       color: var(--green);
@@ -141,22 +150,20 @@
       font-size: 13px;
     }
 
+    section { margin: 38px 0; scroll-margin-top: 130px; }
+    h2 { margin-bottom: 12px; font-size: clamp(28px, 4vw, 42px); }
+    h3 { margin-top: 0; }
+    .muted { color: var(--muted); }
     .grid { display: grid; gap: 16px; }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
     .box {
-      border: 1px solid var(--border);
       padding: 20px;
+      border: 1px solid var(--border);
       border-radius: 14px;
       background: rgba(255,255,255,0.035);
     }
-
-    .box h3 { margin-top: 0; }
-    .muted { color: var(--muted); }
-
-    section { margin: 34px 0; scroll-margin-top: 120px; }
-    h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 12px; }
 
     .project-gallery {
       display: grid;
@@ -187,62 +194,80 @@
     }
 
     .process-list { padding-left: 22px; }
-    .process-list li { margin-bottom: 8px; }
+    .process-list li { margin-bottom: 9px; }
 
-    #quote form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 760px;
+    .address {
+      font-style: normal;
+      line-height: 1.7;
     }
 
+    #quote form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 16px;
+      max-width: 900px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
     label { font-weight: 700; }
 
     #quote input,
+    #quote select,
     #quote textarea {
       width: 100%;
-      font-size: 18px;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 14px;
       border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 10px;
       background: #111;
       color: white;
+      font: inherit;
+      font-size: 17px;
     }
 
     #quote textarea { min-height: 150px; resize: vertical; }
-
+    #quote input[type="file"] { padding: 12px; }
     #quote button {
-      font-size: 20px;
+      grid-column: 1 / -1;
       padding: 16px;
+      border: 0;
       border-radius: 10px;
       background: white;
       color: black;
       cursor: pointer;
-      border: none;
-      font-weight: bold;
+      font-size: 20px;
+      font-weight: 800;
     }
 
-    .quote-note { margin-top: 18px; font-size: 20px; }
+    .quote-note { margin-top: 18px; font-size: 18px; }
 
     footer {
-      margin-top: 40px;
-      padding: 24px 0 80px;
+      margin-top: 42px;
+      padding: 26px 0 80px;
       border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 14px;
     }
 
     .footer-links { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
-    .credit { font-size: 13px; opacity: 0.8; }
+    .credit { font-size: 13px; opacity: 0.85; }
+
+    @media (max-width: 980px) {
+      .topbar { grid-template-columns: 1fr; }
+      .header-brand { grid-row: 1; min-width: 0; }
+      .left-menu { grid-row: 2; justify-content: center; }
+      .right-actions { grid-row: 3; justify-content: center; }
+    }
 
     @media (max-width: 760px) {
       .container { padding: 16px; }
-      .topbar { margin: -16px -16px 24px; align-items: flex-start; }
-      .hero, .grid-2, .grid-3, .project-gallery { grid-template-columns: 1fr; }
+      .topbar { margin: -16px -16px 24px; padding: 14px 16px; }
+      .hero, .grid-2, .grid-3, .project-gallery, #quote form { grid-template-columns: 1fr; }
+      .field-full, #quote button { grid-column: auto; }
       .right-actions { width: 100%; }
-      .contact-link, .quote-btn-top { flex: 1 1 auto; justify-content: center; }
+      .contact-link, .quote-btn-top { flex: 1 1 auto; }
       .email-link { flex-basis: 100%; }
-      .left-menu { gap: 10px; }
+      .header-brand span { white-space: normal; }
       .hero .standfirst { font-size: 18px; }
     }
   </style>
@@ -256,8 +281,16 @@
     "telephone": "+447414784220",
     "email": "info@polytunnels-uk.com",
     "foundingDate": "2001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Pottery Cottages, Crossbush Lane",
+      "addressLocality": "Arundel",
+      "addressRegion": "West Sussex",
+      "postalCode": "BN18 9PN",
+      "addressCountry": "GB"
+    },
     "areaServed": ["England", "Wales", "Isle of Wight"],
-    "description": "Commercial polytunnel re-sheeting, repairs, refurbishment, new installations and canopies for tunnels of any age, size or manufacturer."
+    "description": "Independent commercial polytunnel specialists providing re-sheeting, repairs, refurbishment, installations, canopies and alterations."
   }
   </script>
 </head>
@@ -266,12 +299,17 @@
   <div class="container">
     <header class="topbar" aria-label="Main site header">
       <nav class="left-menu" aria-label="Primary navigation">
-        <a href="#top" class="brand-small">Polytunnels-UK</a>
+        <span class="menu-label">Menu</span>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
         <a href="#services">Services</a>
-        <a href="#area">Area</a>
-        <a href="#process">Quote process</a>
-        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <div class="header-brand">
+        <a href="#top">Polytunnels-UK</a>
+        <span>Re-sheeting • Repairs • Refurbishments • Installations</span>
+      </div>
 
       <div class="right-actions" aria-label="Contact actions">
         <a href="tel:+447414784220" class="contact-link phone-link" aria-label="Call Polytunnels-UK on 07414 784220">☎ 07414 784220</a>
@@ -283,137 +321,254 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow">Established 2001 • England &amp; Wales</p>
+          <p class="eyebrow">Commercial specialists • Established 2001</p>
           <h1 id="hero-title">Commercial polytunnel repairs, re-sheeting and installation</h1>
-          <p class="standfirst">Polytunnels-UK specialises in commercial polytunnel re-sheeting, repairs, refurbishment, new installations and canopies for growers, nurseries, garden centres, farms, schools, colleges and similar organisations.</p>
+          <p class="standfirst">Independent commercial polytunnel specialists serving growers, nurseries, garden centres, farms, schools, colleges and similar organisations across England and Wales.</p>
           <div class="hero-actions">
             <a href="#quote" class="button">Request a quotation</a>
             <a href="tel:+447414784220" class="contact-link phone-link">Call 07414 784220</a>
           </div>
-          <p class="muted">Enquiries normally receive a response within 48 hours.</p>
+          <p class="muted">Enquiries are acknowledged promptly. Once sufficient photographs and measurements are received, we aim to provide an initial assessment within 48 hours.</p>
         </div>
-        <aside class="trust-card" aria-label="Trust signals">
-          <p class="eyebrow">Commercial specialists</p>
+
+        <aside class="trust-card" aria-label="Trust information">
+          <p class="eyebrow">Why Polytunnels-UK</p>
           <ul>
+            <li>Fully insured.</li>
+            <li>All work guaranteed — see terms and conditions.</li>
             <li>Working on tunnels of any age, size or manufacturer.</li>
-            <li>Repair, re-sheeting and refurbishment experience since 2001.</li>
-            <li>Clear quotation process before work begins.</li>
-            <li>Labour guarantee applies to Polytunnels-UK workmanship only.</li>
+            <li>Commercial repair, re-sheeting and refurbishment experience since 2001.</li>
+            <li>Independent advice without being tied to one manufacturer.</li>
           </ul>
         </aside>
       </section>
 
+      <section id="about" class="box" aria-labelledby="about-title">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Independent commercial polytunnel specialists</h2>
+        <p>Polytunnels-UK installs, repairs, re-sheets, refurbishes and alters commercial polytunnels and canopies. We work with structures from different manufacturers and periods, allowing practical solutions to be based on the site and the work required rather than on selling one proprietary system.</p>
+        <p class="muted">The emphasis is on clear assessment, safe working, minimal disruption and extending the useful life of existing structures where appropriate.</p>
+      </section>
+
       <section id="gallery" aria-labelledby="gallery-title">
-        <p class="eyebrow">Recent project</p>
-        <h2 id="gallery-title">Bodmin nursery, Cornwall</h2>
-        <p class="muted">Commercial polytunnel re-sheeting and refurbishment work completed at a nursery site in Bodmin, Cornwall.</p>
+        <p class="eyebrow">Recent commercial project</p>
+        <h2 id="gallery-title">Bodmin Nursery, Cornwall</h2>
+        <p class="muted">Commercial re-sheeting and refurbishment completed during July 2026. Further projects will be added as the photographic archive is organised and labelled.</p>
+
         <div class="project-gallery">
           <figure>
-            <img src="images/bodmin-nursery-commercial-polytunnels.webp" width="480" height="360" loading="lazy" decoding="async" alt="Wide view of re-sheeted commercial polytunnels at a nursery in Bodmin, Cornwall">
-            <figcaption>Completed commercial polytunnels at the Bodmin nursery site.</figcaption>
+            <img src="images/bodmin-nursery-commercial-polytunnels.webp" width="480" height="360" loading="lazy" decoding="async" alt="Completed re-sheeted commercial polytunnels at Bodmin Nursery in Cornwall">
+            <figcaption>Bodmin Nursery, Cornwall — completed commercial polytunnels — July 2026.</figcaption>
           </figure>
           <figure>
-            <img src="images/bodmin-nursery-resheeted-polytunnel.webp" width="480" height="360" loading="lazy" decoding="async" alt="Front and side elevation of a re-sheeted commercial polytunnel at Bodmin Nursery">
-            <figcaption>Finished re-sheeting viewed from the front and side.</figcaption>
+            <img src="images/bodmin-nursery-resheeted-polytunnel.webp" width="480" height="360" loading="lazy" decoding="async" alt="Front and side view of a re-sheeted commercial polytunnel at Bodmin Nursery">
+            <figcaption>Bodmin Nursery, Cornwall — finished front and side elevation — July 2026.</figcaption>
           </figure>
           <figure>
             <img src="images/bodmin-nursery-polytunnel-side-elevation.webp" width="480" height="360" loading="lazy" decoding="async" alt="Long side elevation of a refurbished commercial polytunnel at Bodmin Nursery">
-            <figcaption>Long side elevation showing the completed covering.</figcaption>
+            <figcaption>Bodmin Nursery, Cornwall — completed long side elevation — July 2026.</figcaption>
           </figure>
           <figure>
-            <img src="images/bodmin-nursery-resheeting-work.webp" width="480" height="360" loading="lazy" decoding="async" alt="Polytunnel re-sheeting work in progress at a commercial nursery in Bodmin">
-            <figcaption>Re-sheeting work in progress at the commercial nursery.</figcaption>
+            <img src="images/bodmin-nursery-resheeting-work.webp" width="480" height="360" loading="lazy" decoding="async" alt="Commercial polytunnel re-sheeting in progress at Bodmin Nursery">
+            <figcaption>Bodmin Nursery, Cornwall — re-sheeting in progress — July 2026.</figcaption>
           </figure>
         </div>
       </section>
 
       <section id="services" aria-labelledby="services-title">
         <p class="eyebrow">Services</p>
-        <h2 id="services-title">Polytunnel services for commercial sites</h2>
+        <h2 id="services-title">Commercial polytunnel and canopy services</h2>
         <div class="grid grid-3">
-          <div class="box"><h3>Commercial re-sheeting</h3><p>Full strip and re-sheet services using polythene and PVC for tunnels from any manufacturer.</p></div>
-          <div class="box"><h3>Repairs</h3><p>Practical repairs to restore damaged or worn tunnel structures, covers and fittings where possible.</p></div>
-          <div class="box"><h3>Refurbishment</h3><p>Refurbishment from the ground to gutters to extend the working life of existing commercial tunnels.</p></div>
-          <div class="box"><h3>New installations</h3><p>Installation of new commercial polytunnels and alterations to existing structures.</p></div>
-          <div class="box"><h3>Canopies</h3><p>Canopy work for suitable commercial, education and growing environments.</p></div>
-          <div class="box"><h3>Alterations</h3><p>Structural changes and adaptations for changing crop, site or operational requirements.</p></div>
+          <article class="box"><h3>Commercial re-sheeting</h3><p>Full strip and re-sheet services using commercial polythene and PVC systems for tunnels from any manufacturer.</p></article>
+          <article class="box"><h3>Repairs and storm damage</h3><p>Repairs to damaged structures, covers, doors, ventilation, gutters and associated fittings.</p></article>
+          <article class="box"><h3>Complete refurbishment</h3><p>Ground-to-gutter refurbishment to restore and extend the working life of existing commercial structures.</p></article>
+          <article class="box"><h3>New installations</h3><p>Installation of new commercial polytunnels, multi-span structures and associated systems.</p></article>
+          <article class="box"><h3>Canopies</h3><p>Commercial canopy installation, re-sheeting, repair and refurbishment.</p></article>
+          <article class="box"><h3>Alterations</h3><p>Structural changes and adaptations for crops, machinery access, ventilation and operational requirements.</p></article>
         </div>
       </section>
 
       <section id="area" class="box" aria-labelledby="area-title">
         <p class="eyebrow">Working area</p>
         <h2 id="area-title">England and Wales service area</h2>
-        <p>Polytunnels-UK works across England and Wales, primarily from the South Coast northwards to approximately Cheshire, Derbyshire, Nottinghamshire and Lincolnshire, including the Isle of Wight and excluding the Isle of Man.</p>
-        <p class="muted">If your site is outside the primary area, please still enquire: work outside this area can be considered.</p>
+        <p>Polytunnels-UK works across England and Wales, primarily from the South Coast northwards to approximately Cheshire, Derbyshire, Nottinghamshire and North Lincolnshire, including the Isle of Wight and excluding the Isle of Man.</p>
+        <p class="muted">Commercial work outside the primary area is considered according to project size, timing and logistics.</p>
       </section>
 
       <section id="process" aria-labelledby="process-title">
         <p class="eyebrow">Quotation process</p>
-        <h2 id="process-title">How quotation enquiries are handled</h2>
+        <h2 id="process-title">A clear route from enquiry to quotation</h2>
         <ol class="process-list">
-          <li>Send your name, organisation, site location and details of the required work.</li>
-          <li>Polytunnels-UK reviews the tunnel age, size, manufacturer if known, access and urgency.</li>
-          <li>You will normally receive a response within 48 hours to discuss next steps or arrange a quotation.</li>
+          <li>Send the organisation name, site postcode, required work and available photographs.</li>
+          <li>Include approximate tunnel width and length, age and manufacturer where known.</li>
+          <li>We acknowledge the enquiry and identify any further measurements, photographs or site information needed.</li>
+          <li>Once sufficient information has been received, we aim to provide an initial assessment within 48 hours.</li>
+          <li>A site visit is arranged where remote assessment is insufficient or the project requires detailed inspection.</li>
         </ol>
-        <p class="muted">Polytunnels-UK can guarantee its own labour only. Materials supplied or manufactured by third parties remain subject to the relevant supplier or manufacturer terms.</p>
       </section>
 
       <section id="quote" class="box" aria-labelledby="quote-title">
         <p class="eyebrow">Get a Quote</p>
         <h2 id="quote-title">Request a commercial polytunnel quotation</h2>
-        <p>For urgent work, call <strong><a href="tel:+447414784220">07414 784220</a></strong> or email <strong><a href="mailto:info@polytunnels-uk.com">info@polytunnels-uk.com</a></strong>.</p>
+        <p>For urgent repairs or storm damage, call <strong><a href="tel:+447414784220">07414 784220</a></strong>. For other enquiries, complete the form with as much site information as possible.</p>
 
-        <form name="quote-request" method="POST" data-netlify="true" action="/thank-you.html">
+        <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thank-you.html">
           <input type="hidden" name="form-name" value="quote-request">
+          <p hidden><label>Do not fill this in: <input name="bot-field"></label></p>
 
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" autocomplete="name" required>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" autocomplete="name" required>
+          </div>
 
-          <label for="business">Business or organisation</label>
-          <input id="business" type="text" name="business" autocomplete="organization" required>
+          <div class="field">
+            <label for="business">Business or organisation</label>
+            <input id="business" type="text" name="business" autocomplete="organization" required>
+          </div>
 
-          <label for="email">Email address</label>
-          <input id="email" type="email" name="email" autocomplete="email" required>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" autocomplete="email" required>
+          </div>
 
-          <label for="phone">Telephone</label>
-          <input id="phone" type="tel" name="phone" autocomplete="tel" required>
+          <div class="field">
+            <label for="phone">Telephone</label>
+            <input id="phone" type="tel" name="phone" autocomplete="tel" required>
+          </div>
 
-          <label for="postcode">Postcode</label>
-          <input id="postcode" type="text" name="postcode" autocomplete="postal-code" required>
+          <div class="field">
+            <label for="postcode">Site postcode</label>
+            <input id="postcode" type="text" name="postcode" autocomplete="postal-code" required>
+          </div>
 
-          <label for="town-county">Town or county</label>
-          <input id="town-county" type="text" name="town-county" autocomplete="address-level2" required>
+          <div class="field">
+            <label for="town-county">Town or county</label>
+            <input id="town-county" type="text" name="town-county" autocomplete="address-level2" required>
+          </div>
 
-          <label for="details">Details of the required work</label>
-          <textarea id="details" name="details" required></textarea>
+          <div class="field">
+            <label for="site-type">Site type</label>
+            <select id="site-type" name="site-type" required>
+              <option value="">Select one</option>
+              <option>Commercial grower or farm</option>
+              <option>Nursery or garden centre</option>
+              <option>School, college or university</option>
+              <option>Local authority or public body</option>
+              <option>Estate, charity or organisation</option>
+              <option>Other commercial site</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="service">Service required</label>
+            <select id="service" name="service" required>
+              <option value="">Select one</option>
+              <option>Re-sheeting</option>
+              <option>Repair or storm damage</option>
+              <option>Complete refurbishment</option>
+              <option>New installation</option>
+              <option>Canopy work</option>
+              <option>Alteration</option>
+              <option>Inspection or advice</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="width">Approximate width</label>
+            <input id="width" type="text" name="approximate-width" placeholder="For example: 9.2 m">
+          </div>
+
+          <div class="field">
+            <label for="length">Approximate length</label>
+            <input id="length" type="text" name="approximate-length" placeholder="For example: 30 m">
+          </div>
+
+          <div class="field">
+            <label for="manufacturer">Manufacturer, if known</label>
+            <input id="manufacturer" type="text" name="manufacturer">
+          </div>
+
+          <div class="field">
+            <label for="age">Approximate age</label>
+            <input id="age" type="text" name="approximate-age">
+          </div>
+
+          <div class="field">
+            <label for="urgency">Urgency</label>
+            <select id="urgency" name="urgency">
+              <option>Routine quotation</option>
+              <option>Work required within one month</option>
+              <option>Urgent operational problem</option>
+              <option>Storm or safety-related damage</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="photos">Photographs</label>
+            <input id="photos" type="file" name="photos" accept="image/*,.pdf" multiple>
+          </div>
+
+          <div class="field field-full">
+            <label for="access">Access or site restrictions</label>
+            <textarea id="access" name="access-restrictions" placeholder="Occupied growing areas, restricted vehicle access, working hours, safeguarding or other site requirements"></textarea>
+          </div>
+
+          <div class="field field-full">
+            <label for="details">Details of the required work</label>
+            <textarea id="details" name="details" required></textarea>
+          </div>
 
           <button type="submit">Send quotation request</button>
         </form>
 
-        <p class="quote-note">Enquiries normally receive a response within 48 hours.</p>
+        <p class="quote-note">Enquiries are acknowledged promptly. Initial assessment is normally provided within 48 hours after sufficient photographs and measurements have been received.</p>
+      </section>
+
+      <section id="contact" class="grid grid-2" aria-labelledby="contact-title">
+        <div class="box">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Polytunnels-UK</h2>
+          <p><strong>Telephone:</strong> <a href="tel:+447414784220">07414 784220</a><br>
+          <strong>Email:</strong> <a href="mailto:info@polytunnels-uk.com">info@polytunnels-uk.com</a></p>
+        </div>
+
+        <div class="box">
+          <p class="eyebrow">Office</p>
+          <address class="address">
+            1 Pottery Cottages<br>
+            Crossbush Lane<br>
+            Arundel<br>
+            West Sussex<br>
+            BN18 9PN
+          </address>
+          <p><strong>Visits by prior appointment only.</strong></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Pottery+Cottages+Crossbush+Lane+Arundel+BN18+9PN" rel="noopener">View location on Google Maps</a></p>
+        </div>
       </section>
 
       <section id="privacy" class="box" aria-labelledby="privacy-title">
         <h2 id="privacy-title">Privacy</h2>
-        <p>Information submitted through the quotation form is used to respond to your enquiry. This site does not introduce tracking cookies, advertising scripts or unnecessary third-party services.</p>
+        <p>Information submitted through the quotation form is used to respond to the enquiry and assess the requested work. This website does not introduce tracking cookies, advertising scripts or unnecessary third-party services.</p>
       </section>
 
       <section id="terms" class="box" aria-labelledby="terms-title">
-        <h2 id="terms-title">Terms</h2>
-        <p>Quotation details, timing and availability are confirmed directly by Polytunnels-UK. Polytunnels-UK can only guarantee its own labour and does not guarantee materials supplied or manufactured by third parties.</p>
+        <h2 id="terms-title">Guarantee and terms</h2>
+        <p><strong>All work guaranteed — see terms and conditions.</strong> The guarantee applies to Polytunnels-UK workmanship subject to the written quotation and terms applying to the job. Materials and products supplied or manufactured by third parties remain subject to the relevant supplier or manufacturer terms and warranties. Full terms are supplied with quotations and invoices.</p>
       </section>
     </main>
 
     <footer>
       <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
         <a href="#services">Services</a>
         <a href="#area">Service area</a>
         <a href="#quote">Get a Quote</a>
         <a href="#privacy">Privacy</a>
         <a href="#terms">Terms</a>
       </div>
-      <p>Polytunnels-UK • Established 2001 • <a href="tel:+447414784220">07414 784220</a> • <a href="mailto:info@polytunnels-uk.com">info@polytunnels-uk.com</a></p>
-      <p class="credit">Website created by Gr. Dutyca.</p>
+      <p>Polytunnels-UK • Established 2001 • Fully insured • <a href="tel:+447414784220">07414 784220</a> • <a href="mailto:info@polytunnels-uk.com">info@polytunnels-uk.com</a></p>
+      <p class="credit">This website was created by Gr. Dutyca Enterprises ©.</p>
     </footer>
   </div>
 </body>
