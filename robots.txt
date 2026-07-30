@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: OAI-AdsBot
+Allow: /
+
+Sitemap: https://polytunnels-uk.com/sitemap.xml
