@@ -6,7 +6,7 @@
   <meta name="description" content="Commercial polytunnel re-sheeting, repairs, refurbishment, installations, canopies and alterations across England and Wales. Established 2001. Fully insured.">
   <title>Commercial Polytunnel Repairs, Re-sheeting &amp; Installation | Polytunnels-UK</title>
   <style>
-    :root { --bg:#0a0f0d; --panel:#111a16; --panel-2:#17231d; --text:#fff; --muted:rgba(255,255,255,.78); --green:#19c537; --yellow:#ffe600; --red:#ff2b2b; --border:rgba(255,255,255,.14); }
+    :root { --bg:#0a0f0d; --panel:#111a16; --panel-2:#17231d; --text:#fff; --muted:rgba(255,255,255,.78); --green:#19c537; --dark-green:#075b2b; --yellow:#ffe600; --red:#ff2b2b; --border:rgba(255,255,255,.14); }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
@@ -48,20 +48,43 @@
     .process-list { padding-left:22px; }
     .process-list li { margin-bottom:9px; }
     .address { font-style:normal; line-height:1.7; }
-    #quote form { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 16px; max-width:900px; }
+
+    #quote.quote-panel { max-width:780px; margin:54px auto; padding:clamp(26px,5vw,54px); border:0; border-radius:22px; background:#f8faf9; color:#102118; box-shadow:0 18px 60px rgba(0,0,0,.3); }
+    .quote-heading { max-width:620px; margin:0 auto 28px; text-align:center; }
+    .quote-mark { display:flex; justify-content:center; margin-bottom:12px; color:var(--dark-green); }
+    .quote-mark svg { width:104px; height:54px; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+    #quote h2 { margin:0 0 8px; color:#09271b; font-size:clamp(36px,6vw,56px); line-height:1.08; }
+    .quote-intro { margin:0; color:#405047; font-size:18px; }
+    .quote-required-note { margin:5px 0 0; color:#647168; font-size:15px; }
+    #quote form { display:grid; grid-template-columns:1fr; gap:22px; max-width:660px; margin:0 auto; }
     .field { display:flex; flex-direction:column; gap:7px; }
-    .field-full { grid-column:1/-1; }
-    label { font-weight:700; }
-    #quote input,#quote select,#quote textarea { width:100%; padding:14px; border:1px solid rgba(255,255,255,.24); border-radius:10px; background:#111; color:#fff; font:inherit; font-size:17px; }
-    #quote textarea { min-height:150px; resize:vertical; }
-    #quote input[type="file"] { padding:12px; }
-    #quote button { grid-column:1/-1; padding:16px; border:0; border-radius:10px; background:#fff; color:#000; cursor:pointer; font-size:20px; font-weight:800; }
-    .quote-note { margin-top:18px; font-size:18px; }
+    .field-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    #quote label { color:#14251c; font-weight:800; }
+    .field-hint { margin:0; color:#667269; font-size:14px; }
+    #quote input,#quote select,#quote textarea { width:100%; padding:14px 15px; border:1px solid #bfc9c3; border-radius:8px; background:#fff; color:#14251c; font:inherit; font-size:17px; }
+    #quote input:focus,#quote select:focus,#quote textarea:focus { outline:3px solid rgba(25,197,55,.18); border-color:var(--dark-green); }
+    #quote textarea { min-height:112px; resize:vertical; }
+    .unit-field { position:relative; }
+    .unit-field input { padding-right:78px; }
+    .unit-field span { position:absolute; top:50%; right:15px; transform:translateY(-50%); color:#657169; pointer-events:none; }
+    .form-help { margin-top:2px; color:var(--dark-green); }
+    .form-help summary { display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-weight:700; list-style:none; }
+    .form-help summary::-webkit-details-marker { display:none; }
+    .form-help summary::after { content:'›'; font-size:22px; line-height:1; }
+    .form-help[open] summary::after { transform:rotate(90deg); }
+    .form-help p { margin:8px 0 0; padding:12px 14px; border-left:3px solid var(--dark-green); background:#edf4f0; color:#34483d; font-size:15px; }
+    .photo-field { padding:18px; border:1px dashed #9eaaa3; border-radius:10px; background:#fff; text-align:center; }
+    .photo-field label { display:block; margin-bottom:8px; }
+    #quote input[type="file"] { padding:11px; border:0; background:transparent; font-size:15px; }
+    #quote button { width:100%; padding:16px; border:0; border-radius:8px; background:linear-gradient(90deg,#075b2b,#087435); color:#fff; cursor:pointer; font-size:20px; font-weight:800; }
+    #quote button:hover { filter:brightness(1.08); }
+    .privacy-line { margin:0; text-align:center; color:#657169; font-size:14px; }
+    .quote-note { max-width:660px; margin:20px auto 0; color:#435248; text-align:center; font-size:15px; }
     footer { margin-top:42px; padding:26px 0 80px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
     .footer-links { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:12px; }
     .credit { font-size:13px; opacity:.85; }
     @media (max-width:980px) { .topbar{grid-template-columns:1fr}.header-brand{grid-row:1;min-width:0}.left-menu{grid-row:2;justify-content:center}.right-actions{grid-row:3;justify-content:center} }
-    @media (max-width:760px) { .container{padding:16px}.topbar{margin:-16px -16px 24px;padding:14px 16px}.hero,.grid-2,.grid-3,.project-gallery,#quote form{grid-template-columns:1fr}.field-full,#quote button{grid-column:auto}.right-actions{width:100%}.contact-link,.quote-btn-top{flex:1 1 auto}.email-link{flex-basis:100%}.header-brand span{white-space:normal}.hero .standfirst{font-size:18px} }
+    @media (max-width:760px) { .container{padding:16px}.topbar{margin:-16px -16px 24px;padding:14px 16px}.hero,.grid-2,.grid-3,.project-gallery,.field-row{grid-template-columns:1fr}.right-actions{width:100%}.contact-link,.quote-btn-top{flex:1 1 auto}.email-link{flex-basis:100%}.header-brand span{white-space:normal}.hero .standfirst{font-size:18px}#quote.quote-panel{margin:42px 0;padding:28px 18px}#quote h2{font-size:40px}.quote-intro{font-size:16px} }
   </style>
   <script type="application/ld+json">
   {
@@ -138,39 +161,96 @@
         <p class="muted">Commercial work outside the primary area is considered according to project size, timing and logistics.</p>
       </section>
       <section id="process" aria-labelledby="process-title">
-        <p class="eyebrow">Quotation process</p><h2 id="process-title">A clear route from enquiry to quotation</h2>
+        <p class="eyebrow">Quotation process</p><h2 id="process-title">A quick route from enquiry to quotation</h2>
         <ol class="process-list">
-          <li>Send the organisation name, site postcode, required work and available photographs.</li>
-          <li>Include approximate tunnel width and length, age and manufacturer where known.</li>
-          <li>The enquiry receives same-day acknowledgement during normal working days, together with any request for further measurements, photographs or site information.</li>
-          <li>Once sufficient photographs, measurements and site information have been received, an initial assessment is provided within 48 hours.</li>
-          <li>A site visit is arranged where remote assessment is insufficient or the project requires detailed inspection.</li>
+          <li>Enter the approximate tunnel length, width and preferred sheet type, where known.</li>
+          <li>Tell us whether anything is unsafe, exposed to the weather or putting crops, plants or livestock at risk.</li>
+          <li>Add photographs if available. A full view and close photographs of any damage or sheet fixings are useful.</li>
+          <li>We will acknowledge the enquiry during the same normal working day and contact you for anything else needed.</li>
+          <li>Once sufficient information is available, an initial assessment is provided within 48 hours.</li>
         </ol>
       </section>
-      <section id="quote" class="box" aria-labelledby="quote-title">
-        <p class="eyebrow">Get a Quote</p><h2 id="quote-title">Request a commercial polytunnel quotation</h2>
-        <p>For urgent repairs or storm damage, call <strong><a href="tel:+447414784220">07414 784220</a></strong>. For other enquiries, complete the form with as much site information as possible.</p>
+      <section id="quote" class="quote-panel" aria-labelledby="quote-title">
+        <div class="quote-heading">
+          <div class="quote-mark" aria-hidden="true">
+            <svg viewBox="0 0 120 62" role="img">
+              <path d="M10 52V34C10 17 22 7 38 7h44c16 0 28 10 28 27v18"></path>
+              <path d="M10 52h100M28 52V25h24v27M70 52V30h22v22M40 25V8M60 8v44M82 8v22"></path>
+            </svg>
+          </div>
+          <h2 id="quote-title">Request a Quote</h2>
+          <p class="quote-intro">Quick and simple — we’ll check everything and get back to you.</p>
+          <p class="quote-required-note">Only your contact details and site postcode are required.</p>
+        </div>
         <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thank-you.html">
           <input type="hidden" name="form-name" value="quote-request"><p hidden><label>Do not fill this in: <input name="bot-field"></label></p>
-          <div class="field"><label for="name">Name</label><input id="name" type="text" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="business">Business or organisation</label><input id="business" type="text" name="business" autocomplete="organization" required></div>
-          <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" required></div>
-          <div class="field"><label for="phone">Telephone</label><input id="phone" type="tel" name="phone" autocomplete="tel" required></div>
-          <div class="field"><label for="postcode">Site postcode</label><input id="postcode" type="text" name="postcode" autocomplete="postal-code" required></div>
-          <div class="field"><label for="town-county">Town or county</label><input id="town-county" type="text" name="town-county" autocomplete="address-level2" required></div>
-          <div class="field"><label for="site-type">Site type</label><select id="site-type" name="site-type" required><option value="">Select one</option><option>Commercial grower or farm</option><option>Nursery or garden centre</option><option>School, college or university</option><option>Local authority or public body</option><option>Estate, charity or organisation</option><option>Other commercial site</option></select></div>
-          <div class="field"><label for="service">Service required</label><select id="service" name="service" required><option value="">Select one</option><option>Re-sheeting</option><option>Repair or storm damage</option><option>Complete refurbishment</option><option>New installation</option><option>Canopy work</option><option>Alteration</option><option>Inspection or advice</option></select></div>
-          <div class="field"><label for="width">Approximate width</label><input id="width" type="text" name="approximate-width" placeholder="For example: 9.2 m"></div>
-          <div class="field"><label for="length">Approximate length</label><input id="length" type="text" name="approximate-length" placeholder="For example: 30 m"></div>
-          <div class="field"><label for="manufacturer">Manufacturer, if known</label><input id="manufacturer" type="text" name="manufacturer"></div>
-          <div class="field"><label for="age">Approximate age</label><input id="age" type="text" name="approximate-age"></div>
-          <div class="field"><label for="urgency">Urgency</label><select id="urgency" name="urgency"><option>Routine quotation</option><option>Work required within one month</option><option>Urgent operational problem</option><option>Storm or safety-related damage</option></select></div>
-          <div class="field"><label for="photos">Photographs</label><input id="photos" type="file" name="photos" accept="image/*,.pdf" multiple></div>
-          <div class="field field-full"><label for="access">Access or site restrictions</label><textarea id="access" name="access-restrictions" placeholder="Occupied growing areas, restricted vehicle access, working hours, safeguarding or other site requirements"></textarea></div>
-          <div class="field field-full"><label for="details">Details of the required work</label><textarea id="details" name="details" required></textarea></div>
-          <button type="submit">Send quotation request</button>
+
+          <div class="field">
+            <label for="length">Tunnel length</label>
+            <div class="unit-field"><input id="length" type="number" name="tunnel-length-metres" min="0" step="0.1" inputmode="decimal"><span>metres</span></div>
+            <details class="form-help"><summary>How do I measure this?</summary><p>Measure from one end of the tunnel to the other. An approximate figure is fine; we will confirm it before material is ordered.</p></details>
+          </div>
+
+          <div class="field">
+            <label for="width">Tunnel width</label>
+            <div class="unit-field"><input id="width" type="number" name="tunnel-width-metres" min="0" step="0.1" inputmode="decimal"><span>metres</span></div>
+            <details class="form-help"><summary>How do I measure this?</summary><p>Measure straight across the tunnel at ground level, from the outside of one side to the outside of the other. Do not measure over the hoop.</p></details>
+          </div>
+
+          <div class="field">
+            <label for="sheet-type">Type of sheet required</label>
+            <select id="sheet-type" name="sheet-type">
+              <option value="">Select an option</option>
+              <option>Clear</option>
+              <option>Diffused</option>
+              <option>Super-diffused</option>
+              <option>White</option>
+              <option>White Stockmaster</option>
+              <option>Green and white</option>
+              <option>Black and white</option>
+              <option>Other</option>
+              <option>Not sure — please advise me</option>
+            </select>
+            <details class="form-help"><summary>Help me choose a sheet</summary><p>Choose “Not sure” and tell us what is being grown or what the structure is used for. We will recommend a suitable material.</p></details>
+          </div>
+
+          <div class="field">
+            <label for="immediate-risk">Is anything at immediate risk?</label>
+            <select id="immediate-risk" name="immediate-risk">
+              <option value="">Select an option</option>
+              <option>No immediate risk</option>
+              <option>Crop, plants or livestock may be damaged</option>
+              <option>The structure may be unsafe</option>
+              <option>The tunnel is open to the weather</option>
+              <option>There is an urgent deadline</option>
+              <option>Other or not sure</option>
+            </select>
+            <p class="field-hint">This helps us understand the situation and prioritise genuine emergencies.</p>
+          </div>
+
+          <div class="field">
+            <label for="details">Anything else we should know?</label>
+            <p class="field-hint">For example: damage, urgency, required completion date or what is being grown.</p>
+            <textarea id="details" name="additional-information"></textarea>
+          </div>
+
+          <div class="field photo-field">
+            <label for="photos">Photographs <span class="field-hint">(optional but helpful)</span></label>
+            <p class="field-hint">Include a full view of the tunnel and any damaged areas or sheet fixings.</p>
+            <input id="photos" type="file" name="photos" accept="image/*,.pdf" multiple>
+          </div>
+
+          <div class="field-row" aria-label="Your contact details">
+            <div class="field"><label for="name">Your name</label><input id="name" type="text" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Telephone number</label><input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="07xxx xxx xxx" required></div>
+            <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" required></div>
+            <div class="field"><label for="postcode">Site postcode</label><input id="postcode" type="text" name="postcode" autocomplete="postal-code" placeholder="e.g. BN18 9PN" required></div>
+          </div>
+
+          <button type="submit">Send my enquiry</button>
+          <p class="privacy-line">Your details are used only to respond to your enquiry.</p>
         </form>
-        <p class="quote-note">Enquiries receive same-day acknowledgement during normal working days. Initial assessment is provided within 48 hours after sufficient photographs and measurements have been received.</p>
+        <p class="quote-note">Enquiries receive same-day acknowledgement during normal working days. An initial assessment is provided within 48 hours once sufficient information has been received.</p>
       </section>
       <section id="contact" class="grid grid-2" aria-labelledby="contact-title">
         <div class="box"><p class="eyebrow">Contact</p><h2 id="contact-title">Polytunnels-UK</h2><p><strong>Telephone:</strong> <a href="tel:+447414784220">07414 784220</a><br><strong>Email:</strong> <a href="mailto:info@polytunnels-uk.com">info@polytunnels-uk.com</a></p></div>
