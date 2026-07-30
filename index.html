@@ -44,10 +44,18 @@
     .about-box { padding:clamp(24px,4vw,42px); background:linear-gradient(rgba(10,15,13,.88),rgba(10,15,13,.88)),url("images/bodmin-nursery-commercial-polytunnels.webp") center 55%/cover no-repeat; }
     .about-box p { max-width:1000px; }
     .about-box .muted { color:rgba(255,255,255,.88); }
+    .project-slider { position:relative; }
+    .project-slide[hidden] { display:none; }
+    .project-slide h2 { margin-top:0; }
     .project-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:20px; }
     .project-gallery figure { margin:0; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--panel); }
     .project-gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
     .project-gallery figcaption { padding:12px 14px; color:var(--muted); font-size:14px; }
+    .project-controls { display:flex; justify-content:center; align-items:center; gap:10px; margin-top:18px; }
+    .project-controls[hidden] { display:none; }
+    .project-control { min-width:44px; min-height:42px; border:1px solid var(--border); border-radius:999px; background:var(--panel); color:#fff; cursor:pointer; font:inherit; font-weight:800; }
+    .project-control:hover,.project-control:focus-visible { border-color:var(--green); outline:none; }
+    .project-status { min-width:86px; text-align:center; color:var(--muted); font-size:14px; }
     .process-list { padding-left:22px; }
     .process-list li { margin-bottom:9px; }
     .address { font-style:normal; line-height:1.7; }
@@ -115,14 +123,24 @@
         <p>We work with structures of all ages and from all manufacturers, allowing us to provide practical solutions tailored to your specific needs. We are not affiliated to any one manufacturer, so our advice is based solely on what is best for you and your site.</p>
         <p class="muted">Our emphasis is on clear communication, best working practices and minimal disruption, while maximising the benefits to your business.</p>
       </section>
-      <section id="gallery" aria-labelledby="gallery-title">
-        <p class="eyebrow">Recent commercial project</p><h2 id="gallery-title">Bodmin Nursery, Cornwall</h2>
-        <p class="muted">Commercial re-sheeting and refurbishment completed during July 2026.</p>
-        <div class="project-gallery">
-          <figure><img src="images/bodmin-nursery-commercial-polytunnels.webp" width="480" height="360" loading="lazy" decoding="async" alt="Completed re-sheeted commercial polytunnels at Bodmin Nursery in Cornwall"><figcaption>Bodmin Nursery, Cornwall — completed commercial polytunnels — July 2026.</figcaption></figure>
-          <figure><img src="images/bodmin-nursery-resheeted-polytunnel.webp" width="480" height="360" loading="lazy" decoding="async" alt="Front and side view of a re-sheeted commercial polytunnel at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — finished front and side elevation — July 2026.</figcaption></figure>
-          <figure><img src="images/bodmin-nursery-polytunnel-side-elevation.webp" width="480" height="360" loading="lazy" decoding="async" alt="Long side elevation of a refurbished commercial polytunnel at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — completed long side elevation — July 2026.</figcaption></figure>
-          <figure><img src="images/bodmin-nursery-resheeting-work.webp" width="480" height="360" loading="lazy" decoding="async" alt="Commercial polytunnel re-sheeting in progress at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — re-sheeting in progress — July 2026.</figcaption></figure>
+      <section id="gallery" aria-labelledby="gallery-heading">
+        <p class="eyebrow" id="gallery-heading">Previous Projects</p>
+        <div class="project-slider" data-project-slider data-interval="10000">
+          <article class="project-slide" data-project-slide aria-labelledby="project-bodmin-title">
+            <h2 id="project-bodmin-title">Bodmin Nursery, Cornwall</h2>
+            <p class="muted">Commercial re-sheeting and refurbishment completed during July 2026.</p>
+            <div class="project-gallery">
+              <figure><img src="images/bodmin-nursery-commercial-polytunnels.webp" width="480" height="360" loading="lazy" decoding="async" alt="Completed re-sheeted commercial polytunnels at Bodmin Nursery in Cornwall"><figcaption>Bodmin Nursery, Cornwall — completed commercial polytunnels — July 2026.</figcaption></figure>
+              <figure><img src="images/bodmin-nursery-resheeted-polytunnel.webp" width="480" height="360" loading="lazy" decoding="async" alt="Front and side view of a re-sheeted commercial polytunnel at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — finished front and side elevation — July 2026.</figcaption></figure>
+              <figure><img src="images/bodmin-nursery-polytunnel-side-elevation.webp" width="480" height="360" loading="lazy" decoding="async" alt="Long side elevation of a refurbished commercial polytunnel at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — completed long side elevation — July 2026.</figcaption></figure>
+              <figure><img src="images/bodmin-nursery-resheeting-work.webp" width="480" height="360" loading="lazy" decoding="async" alt="Commercial polytunnel re-sheeting in progress at Bodmin Nursery"><figcaption>Bodmin Nursery, Cornwall — re-sheeting in progress — July 2026.</figcaption></figure>
+            </div>
+          </article>
+          <div class="project-controls" data-project-controls hidden aria-label="Previous project slideshow controls">
+            <button type="button" class="project-control" data-project-previous aria-label="Show previous project">‹</button>
+            <span class="project-status" data-project-status aria-live="polite"></span>
+            <button type="button" class="project-control" data-project-next aria-label="Show next project">›</button>
+          </div>
         </div>
       </section>
       <section id="services" aria-labelledby="services-title">
@@ -189,5 +207,40 @@
       <p class="credit">This website was created by Gr. Dutyca Enterprises ©.</p>
     </footer>
   </div>
+  <script>
+    (() => {
+      const slider = document.querySelector('[data-project-slider]');
+      if (!slider) return;
+      const slides = Array.from(slider.querySelectorAll('[data-project-slide]'));
+      const controls = slider.querySelector('[data-project-controls]');
+      const previous = slider.querySelector('[data-project-previous]');
+      const next = slider.querySelector('[data-project-next]');
+      const status = slider.querySelector('[data-project-status]');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const interval = Number(slider.dataset.interval) || 10000;
+      let current = 0;
+      let timer;
+      const show = index => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, position) => { slide.hidden = position !== current; });
+        if (status) status.textContent = `${current + 1} of ${slides.length}`;
+      };
+      const stop = () => { if (timer) window.clearInterval(timer); };
+      const start = () => {
+        stop();
+        if (!reduceMotion && slides.length > 1) timer = window.setInterval(() => show(current + 1), interval);
+      };
+      show(0);
+      if (slides.length < 2) return;
+      controls.hidden = false;
+      previous.addEventListener('click', () => { show(current - 1); start(); });
+      next.addEventListener('click', () => { show(current + 1); start(); });
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      slider.addEventListener('focusin', stop);
+      slider.addEventListener('focusout', start);
+      start();
+    })();
+  </script>
 </body>
 </html>
